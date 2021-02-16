@@ -1,0 +1,6 @@
+[submodule ".basher"]
+	path = .basher
+	url = https://github.com/basherpm/basher.git
+[submodule ".bash-it"]
+	path = .bash-it
+	url = https://github.com/Bash-it/bash-it.git
