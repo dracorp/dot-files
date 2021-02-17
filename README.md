@@ -5,7 +5,16 @@ Hidden files
 
 Run `init.sh` script or:
 
-`git clone --recursive https://github.com/dracorp/dot-files.git`
+`$ git clone --recursive https://github.com/dracorp/dot-files.git`
+or better:
+```
+$ git clone https://github.com/dracorp/dot-files.git --shallow-submodules --recursive
+# or, for smaller size:
+$ git clone https://github.com/dracorp/dot-files.git
+$ cd dot-files
+$ git submodule update --init --depth 1
+
+```
 
 ## bash-it
 
