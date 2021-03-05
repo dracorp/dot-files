@@ -1,7 +1,7 @@
-# echo ~/.bashrc
-if (( SHLVL > 1 )); then
-    source /etc/profile
+if [ -f ~/.bashrc.secret ]; then
+    . ~/.bashrc.secret
 fi
-if [[ -r ~/.bash-it.sh ]]; then
+if [ -f ~/.bash-it.sh ]; then
     . ~/.bash-it.sh
 fi
+

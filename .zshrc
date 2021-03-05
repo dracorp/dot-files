@@ -13,33 +13,37 @@ if command -v antibody &>/dev/null; then
         adb
         alias-finder
         ansible
-        archlinux
         autojump
-        battery
         bgnotify
-        branch
+        brew
         colored-man-pages
         colorize
+        common-aliases
         copyfile
         cpanm
-        direnv
+        dash
+        dirhistory
         docker
-        dotenv
+        docker-compose
         emoji
-        emoji-clock
+        encode64
         fancy-ctrl-z
         fzf
         git-extras
         git-flow-avh
-        git-hubflow
         git-lfs
-        git-prompt
         gitfast
         gitignore
+        helm
         history
+        history-substring-search
+        httpie
+        iterm2
         jsontools
+        jira
+        kops
+        kubectl
         last-working-dir
-        lol
         man
         minikube
         nmap
