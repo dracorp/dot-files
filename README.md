@@ -40,3 +40,7 @@ done
 To update basher packages:
 
 ```basher outdated | xargs -I{} basher upgrade {}```
+
+## Zsh
+
+I use antibody framework. For more see https://github.com/unixorn/awesome-zsh-plugins
