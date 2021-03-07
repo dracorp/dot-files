@@ -58,14 +58,7 @@ if command -v antibody &>/dev/null; then
         zsh_reload
 
     )
-    ZSH_THEME="robbyrussell"
     CASE_SENSITIVE="true"
-
-    # spaceship theme configuration
-    SPACESHIP_DIR_TRUNC=0
-    SPACESHIP_DIR_TRUNC_REPO=false
-    SPACESHIP_BATTERY_SHOW=always
-    SPACESHIP_EXIT_CODE_SHOW=true
 
     # antibody's plugins
     antibody bundle < ~/.zsh_plugins.txt
@@ -74,3 +67,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# My configuration
+export EDITOR=vim
