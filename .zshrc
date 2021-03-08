@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# prevent PATH from taking on duplicate entries
+typeset -U path
+
+# path+=foo
+# path=(bar $path) or path=($path bar)
+
 if command -v antibody &>/dev/null; then
     source <(antibody init)
 
@@ -26,6 +32,7 @@ if command -v antibody &>/dev/null; then
         docker
         docker-compose
         emoji
+        emotty
         encode64
         fancy-ctrl-z
         fzf
@@ -57,7 +64,6 @@ if command -v antibody &>/dev/null; then
         systemd
         thefuck
         themes
-        timer
         zsh-interactive-cd
         zsh_reload
 
@@ -72,5 +78,14 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# My configuration
-export EDITOR=vim
+# common directory for custom configuration for Zsh, and bash-it
+if [[ -d ~/.profile.d/ ]]; then
+    for plugin_file in ~/.profile.d/*.zsh(N); do
+        # echo source $plugin_file
+        source $plugin_file
+    done
+    for plugin_file in ~/.profile.d/*.sh(N); do
+        # echo source $plugin_file
+        source $plugin_file
+    done
+fi
