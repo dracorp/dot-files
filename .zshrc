@@ -64,6 +64,7 @@ if command -v antibody &>/dev/null; then
         systemd
         thefuck
         themes
+        web-search
         zsh-interactive-cd
         zsh_reload
 

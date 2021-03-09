@@ -14,7 +14,7 @@ BASH_IT_THEME=powerline-multiline
 export POWERLINE_LEFT_PROMPT='scm python_venv user_info hostname cwd'
 export POWERLINE_RIGHT_PROMPT='clock last_status k8s_context azure_context'
 # faster
-export POWERLINE_RIGHT_PROMPT='clock last_status'
+export POWERLINE_RIGHT_PROMPT='clock battery last_status'
 export POWERLINE_COMPACT=true
 # to see all themes
 # BASH_PREVIEW=true reload
@@ -56,7 +56,7 @@ export SCM_GIT_SHOW_STASH_INFO=true
 
 # Set vcprompt executable path for scm advance info in prompt (demula theme)
 # https://github.com/djl/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+export VCPROMPT_EXECUTABLE="$HOME/bin/vcprompt"
 
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
