@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# prevent PATH from taking on duplicate entries
+typeset -U path
+
+# path+=foo
+# path=(bar $path) or path=($path bar)
+
 if command -v antibody &>/dev/null; then
     source <(antibody init)
 
@@ -15,31 +21,31 @@ if command -v antibody &>/dev/null; then
         ansible
         archlinux
         autojump
-        battery
         bgnotify
-        branch
         colored-man-pages
         colorize
+        common-aliases
         copyfile
         cpanm
-        direnv
+        dirhistory
         docker
-        dotenv
+        docker-compose
         emoji
-        emoji-clock
+        emotty
+        encode64
         fancy-ctrl-z
         fzf
         git-extras
         git-flow-avh
         git-hubflow
         git-lfs
-        git-prompt
         gitfast
         gitignore
         history
+        history-substring-search
+        httpie
         jsontools
         last-working-dir
-        lol
         man
         minikube
         nmap
@@ -53,7 +59,7 @@ if command -v antibody &>/dev/null; then
         systemd
         thefuck
         themes
-        timer
+        web-search
         zsh-interactive-cd
         zsh_reload
 
@@ -68,5 +74,14 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# My configuration
-export EDITOR=vim
+# common directory for custom configuration for Zsh, and bash-it
+if [[ -d ~/.profile.d/ ]]; then
+    for plugin_file in ~/.profile.d/*.zsh(N); do
+        # echo source $plugin_file
+        source $plugin_file
+    done
+    for plugin_file in ~/.profile.d/*.sh(N); do
+        # echo source $plugin_file
+        source $plugin_file
+    done
+fi
