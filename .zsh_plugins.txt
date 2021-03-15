@@ -3,16 +3,16 @@ reegnz/jq-zsh-plugin # jq zsh plugin
 caarlos0/jvm # Never manually change your JAVA_HOME again
 djui/alias-tips # An oh-my-zsh plugin to help remembering those aliases you defined once
 # it should be before zsh-history-substring-search, it also provided by ohmyzsh
-zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for Zsh.
 zsh-users/zsh-completions # Additional completion definitions for Zsh.
 zsh-users/zsh-autosuggestions # Fish-like autosuggestions for zsh
 caarlos0/ports # Easily see what's happening on your computer's ports
 ohmyzsh/ohmyzsh # A delightful community-driven (with 1800+ contributors) framework for managing your zsh configuration.
 psprint/zsh-navigation-tools # Curses-based tools for Zsh, e.g. multi-word history searcher
 unixorn/git-extra-commands # A collection of git utilities and useful extra git scripts I've discovered or written, packaged for ease of use with shell frameworks.
-MichaelAquilina/zsh-you-should-use # ZSH plugin that reminds you to use existing aliases for commands you just typed
 # it should be after oh-my-zsh
 dracorp/azure-cli-zsh-completion # Zsh completion for azure-cli
 sinetoami/antibody-completion # zsh plugin: this plugin provides completion for Antibody plugin manager
+zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for Zsh.
+arzzen/calc.plugin.zsh # zsh calculator - with support for basic math
 # Themes
 romkatv/powerlevel10k # A Zsh theme
