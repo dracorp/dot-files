@@ -59,6 +59,8 @@ if command -v antibody &>/dev/null; then
         systemd
         thefuck
         themes
+        tmux
+        tmuxinator
         web-search
         zsh-interactive-cd
         zsh_reload
