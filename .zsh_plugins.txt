@@ -13,6 +13,7 @@ unixorn/git-extra-commands # A collection of git utilities and useful extra git 
 dracorp/azure-cli-zsh-completion # Zsh completion for azure-cli
 sinetoami/antibody-completion # zsh plugin: this plugin provides completion for Antibody plugin manager
 zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for Zsh.
+trapd00r/zsh-syntax-highlighting-filetypes # zsh syntax highlighting with dircolors in realtime
 arzzen/calc.plugin.zsh # zsh calculator - with support for basic math
 # Themes
 romkatv/powerlevel10k # A Zsh theme
