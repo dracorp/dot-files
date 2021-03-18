@@ -60,10 +60,12 @@ if command -v antibody &>/dev/null; then
         safe-paste
         screen
         sdk
-        sudo
-        systemd
+        # sudo
+        # systemd
         thefuck
         themes
+        tmux
+        tmuxinator
         web-search
         zsh-interactive-cd
         zsh_reload
