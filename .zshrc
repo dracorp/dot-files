@@ -66,16 +66,23 @@ if command -v antibody &>/dev/null; then
         zsh_reload
 
     )
-    CASE_SENSITIVE="true"
+    export CASE_SENSITIVE="true"
+    # ZSH_THEME=agnoster
 
     # antibody's plugins
     antibody bundle < ~/.zsh_plugins.txt
 
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source () {
+    [[ ! "$1.zwc" -nt $1 ]] || zcompile $1
+    builtin source $@
+}
 
+. () {
+    [[ ! "$1.zwc" -nt $1 ]] || zcompile $1
+    builtin . $@
+}
 # common directory for custom configuration for Zsh, and bash-it
 if [[ -d ~/.profile.d/ ]]; then
     for plugin_file in ~/.profile.d/*.zsh(N); do
@@ -87,3 +94,7 @@ if [[ -d ~/.profile.d/ ]]; then
         source $plugin_file
     done
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
