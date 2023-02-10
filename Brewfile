@@ -55,9 +55,11 @@ brew 'tig'            # Text-mode interface for git
 brew 'hubflow'          # GitFlow for GitHub
 brew 'git-flow-avh'     # AVH edition of git-flow
 brew 'jj' # Git-compatible distributed version control system
+brew 'neofetch' # Fast, highly customisable system info script
 
 # some requirements
 brew 'coreutils' # GNU File, Shell, and Text utilities
+brew 'colordiff' # Color-highlighted diff(1) output
 
 # CLI Basics
 brew 'aria2'        # Resuming download util (better wget)

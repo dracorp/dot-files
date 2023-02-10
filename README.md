@@ -20,6 +20,10 @@ $ git submodule update --init --depth 1
 
 ## basher
 
+```sh
+basher list | xargs -I{} bash -c 'echo "[](https://github.com/{}) \"{}\""' > basher.md
+```
+
 ```
 BASHER_PACKAGES=(
 ahmetb/kubectl-aliases
