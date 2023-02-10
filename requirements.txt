@@ -1,0 +1,4 @@
+# git-smartlog
+# https://github.com/reydanro/git-smartlog
+gitpython
+colorama
