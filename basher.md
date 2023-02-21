@@ -28,3 +28,4 @@
 [A collection of LS_COLORS definitions; needs your contribution!](https://github.com/trapd00r/LS_COLORS) "trapd00r/LS_COLORS"
 [A collection of git utilities and useful extra git scripts](https://github.com/unixorn/git-extra-commands) "unixorn/git-extra-commands"
 [Making SSH more convenient](https://github.com/vaporup/ssh-tools) "vaporup/ssh-tools"
+[~ • My Đotfiles](https://github.com/lissy93/dotfiles) "lissy93/dotfiles"

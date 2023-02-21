@@ -166,7 +166,7 @@ cask 'macvim' # GUI for vim, made for macOS
 cask 'double-commander' # File manager
 cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
 cask 'foxitreader' # PDF reader
-
+cask 'atom' # Text editor
 # Media
 cask 'calibre'      # E-Book reader
 cask 'spotify', args: { require_sha: false } # Propietary music streaming
