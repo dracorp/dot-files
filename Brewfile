@@ -56,10 +56,12 @@ brew 'hubflow'          # GitFlow for GitHub
 brew 'git-flow-avh'     # AVH edition of git-flow
 brew 'jj' # Git-compatible distributed version control system
 brew 'neofetch' # Fast, highly customisable system info script
+brew 'gitmoji' # Interactive command-line tool for using emoji in commit messages
 
 # some requirements
 brew 'coreutils' # GNU File, Shell, and Text utilities
 brew 'colordiff' # Color-highlighted diff(1) output
+brew 'terminal-notifier' # Send macOS User Notifications from the command-line
 
 # CLI Basics
 brew 'aria2'        # Resuming download util (better wget)
@@ -82,6 +84,7 @@ brew 'tree'         # Directory listings as tree structure
 brew 'entr'         # Run arbitrary commands when files change
 brew 'hyperfine'    # Command-line benchmarking tool
 brew 'tre-command'  # Tree command, improved
+brew 'tmuxinator'   # Manage complex tmux sessions easily
 
 # CLI Monitoring and Performance Apps
 brew 'bmon'         # Bandwidth utilization monitor
@@ -96,6 +99,7 @@ brew 'dog'          # Command-line DNS client
 # CLI Development Suits
 brew 'httpie'       # HTTP / API testing testing client
 brew 'lazydocker'   # Full Docker management app
+brew 'autopep8'     # Automatically formats Python code to conform to the PEP 8 style guide
 
 # CLI External Sercvices
 brew 'asciinema'        # Record and share terminal sessions
@@ -106,6 +110,7 @@ brew 'pv'           # Pipe viewer, with animation options
 brew 'figlet'       # Output text as big ASCII art text
 brew 'lolcat'       # Make console output raibow colored
 brew 'neofetch'     # Show system data and ditstro info
+brew 'zoxide' # Shell extension to navigate your filesystem faster
 
 #############################################################
 # Software Development                                      #
@@ -144,6 +149,13 @@ cask 'rancher' # Kubernetes and container management on the desktop
 cask 'microsoft-remote-desktop' # Remote desktop client
 cask 'gitup' # Update multiple git repositories at once
 # cask 'octant' # MSC
+brew 'istioctl' # Istio configuration command-line utility
+brew 'jfrog-cli' # Command-line interface for JFrog products
+cask 'multipass' # Orchestrates virtual Ubuntu instances
+brew 'nmap' # Port scanning utility for large networks
+brew 'pylint' # It's not just a linter that annoys you!
+cask 'vagrant' # Development environment
+cask 'vagrant-manager' # Vagrant Manager
 
 # Development Utils
 

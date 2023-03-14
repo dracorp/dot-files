@@ -2,3 +2,5 @@
 # https://github.com/reydanro/git-smartlog
 gitpython
 colorama
+ansible-lint
+pydf
