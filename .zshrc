@@ -14,47 +14,112 @@ typeset -U path
 
 # ohmyzsh/ohmyzsh's settings
 plugins=(
+    ag
+    aliases
+    alias-finder
+    ansible
     autoenv
-        autojump
-        colored-man-pages
-        colorize
-        common-aliases
+    autojump
+    azure
+    bgnotify
+    colored-man-pages
+    colorize
+    command-not-found
+    common-aliases
+    copyfile
     direnv
-        docker
-        docker-compose
+    docker
+    docker-compose
+    emoji
+    emoji-clock
+    emotty
+    encode64
     extract
-        fancy-ctrl-z
-        fzf
+    fancy-ctrl-z
+    fd
+    fzf
+    genpass
+    gh
+    git
     git-escape-magic
-        git-extras
-        git-flow-avh
-        git-lfs
-        gitfast
+    git-extras
+    gitfast
+    git-flow-avh
+    git-hubflow
+    git-lfs
+    gitfast
+    gitignore
     gnu-utils
-        history
-        history-substring-search
-        httpie
+    helm
+    history
+    history-substring-search
+    httpie
     isodate
+    istioctl
     iterm2
-        jsontools
+    jfrog
+    jump
+    jsontools
+    keychain
     kops
-        last-working-dir
+    kubectl
+    last-working-dir
     macos
-        man
-        minikube
+    # man
+    minikube
+    multipass
+    mvn
+    nmap
     npm
-        pip
-        pj
+    pep8
+    per-directory-history
+    pip
+    pj
+    pylint
+    ripgrep
     rsync
     scd
-        screen
+    screen
     ssh-agent
-        sudo
+    # sudo
     systemadmin
+    terraform
+    thefuck
+    themes
     tig
-        zsh-interactive-cd
-    # zsh-navigation-tools
+    tmux
+    vagrant-prompt
+    vscode
+    wd
+    web-search
+    # z
+    zoxide
+    zsh-interactive-cd
+)
 
+plugins_external=(
+    ohmyzsh/ohmyzsh # A delightful community-driven (with 1800+ contributors) framework for managing your zsh configuration.
+    3v1n0/zsh-bash-completions-fallback # Simple zsh plugin to support bash completions for a command if no native one is available
+    reegnz/jq-zsh-plugin # jq zsh plugin
+    dmakeienko/azcli # An oh-my-zsh plugin for AZ CLI
+    # caarlos0/jvm # Never manually change your JAVA_HOME again
+    # djui/alias-tips # An oh-my-zsh plugin to help remembering those aliases you defined once
+    # it should be before zsh-history-substring-search, it also provided by ohmyzsh
+    zsh-users/zsh-completions # Additional completion definitions for Zsh.
+    zsh-users/zsh-autosuggestions # Fish-like autosuggestions for zsh
+    # caarlos0/ports # Easily see what's happening on your computer's ports
+    z-shell/zsh-navigation-tools # Set of tools like – n-history, – multi-word history searcher, n-cd, – directory bookmark manager, n-kill, – htop, and more. Based on – n-list.
+    unixorn/git-extra-commands # A collection of git utilities and useful extra git scripts I've discovered or written, packaged for ease of use with shell frameworks.
+    # it should be after oh-my-zsh
+    dracorp/azure-cli-zsh-completion # Zsh completion for azure-cli
+    sinetoami/antibody-completion # zsh plugin: this plugin provides completion for Antibody plugin manager
+    petervanderdoes/git-flow-completion # Bash, Zsh and fish completion support for git-flow.
+    zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for Zsh.
+    # trapd00r/zsh-syntax-highlighting-filetypes # zsh syntax highlighting with dircolors in realtime
+    # arzzen/calc.plugin.zsh # zsh calculator - with support for basic math
+    Pilaton/OhMyZsh-full-autoupdate
+    # Themes
+    romkatv/powerlevel10k # A Zsh theme
 )
 
 # PLUGIN_MANAGER=antigen
@@ -63,32 +128,11 @@ PLUGIN_MANAGER=antibody
 if [[ "$PLUGIN_MANAGER" == antibody ]]; then
     (( DEBUG )) && printf "Sourcing antibody init\n"
     source <(antibody init)
-    (( DEBUG )) && printf "Loading antibody's plugins\n"
-    # antibody bundle ohmyzsh/ohmyzsh
-    # antibody bundle < ~/.zsh_plugins.txt
-    # antibody bundle romkatv/powerlevel10k
-
-    antibody bundle ohmyzsh/ohmyzsh # A delightful community-driven (with 1800+ contributors) framework for managing your zsh configuration.
-    antibody bundle 3v1n0/zsh-bash-completions-fallback # Simple zsh plugin to support bash completions for a command if no native one is available
-    antibody bundle reegnz/jq-zsh-plugin # jq zsh plugin
-    antibody bundle dmakeienko/azcli # An oh-my-zsh plugin for AZ CLI
-    # antibody bundle caarlos0/jvm # Never manually change your JAVA_HOME again
-    # antibody bundle djui/alias-tips # An oh-my-zsh plugin to help remembering those aliases you defined once
-    # it should be before zsh-history-substring-search, it also provided by ohmyzsh
-    antibody bundle zsh-users/zsh-completions # Additional completion definitions for Zsh.
-    antibody bundle zsh-users/zsh-autosuggestions # Fish-like autosuggestions for zsh
-    # antibody bundle caarlos0/ports # Easily see what's happening on your computer's ports
-    antibody bundle z-shell/zsh-navigation-tools # Set of tools like – n-history, – multi-word history searcher, n-cd, – directory bookmark manager, n-kill, – htop, and more. Based on – n-list.
-    antibody bundle unixorn/git-extra-commands # A collection of git utilities and useful extra git scripts I've discovered or written, packaged for ease of use with shell frameworks.
-    # it should be after oh-my-zsh
-    antibody bundle dracorp/azure-cli-zsh-completion # Zsh completion for azure-cli
-    antibody bundle sinetoami/antibody-completion # zsh plugin: this plugin provides completion for Antibody plugin manager
-    antibody bundle petervanderdoes/git-flow-completion # Bash, Zsh and fish completion support for git-flow.
-    antibody bundle zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for Zsh.
-    # antibody bundle trapd00r/zsh-syntax-highlighting-filetypes # zsh syntax highlighting with dircolors in realtime
-    # antibody bundle arzzen/calc.plugin.zsh # zsh calculator - with support for basic math
-    # Themes
-    antibody bundle romkatv/powerlevel10k # A Zsh theme
+    (( DEBUG )) && printf "Loading externals plugins\n"
+    for plugin in ${plugins_external[@]}; do
+        (( DEBUG )) && printf "Loading $plugin"
+        antibody bundle $plugin
+    done
 fi
 
 if [[ "$PLUGIN_MANAGER" == antigen ]]; then
@@ -104,16 +148,18 @@ if [[ "$PLUGIN_MANAGER" == antigen ]]; then
         antigen bundle $plugin
     done
 
-    while read -r line; do
-        antigen bundle  $line
-    done < <( cat ~/.antigenrc | grep -v ^# | sed 's/#.*//' )
+    (( DEBUG )) && printf "Loading externals plugins\n"
+    for plugin in ${plugins_external[@]}; do
+        (( DEBUG )) && printf "Loading $plugin"
+        antigen bundle $plugin
+    done
 
+    # Theme
     antigen theme romkatv/powerlevel10k
-    # antigen theme candy
     antigen apply
 fi
 
-export CASE_SENSITIVE="true"
+# export CASE_SENSITIVE="true"
 
 # Common directory for custom configuration for Zsh, and bash-it
 if [[ -d ~/.profile.d/ ]]; then
