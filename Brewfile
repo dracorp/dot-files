@@ -65,6 +65,7 @@ brew "azure/kubelogin/kubelogin"
 brew 'coreutils' # GNU File, Shell, and Text utilities
 brew 'colordiff' # Color-highlighted diff(1) output
 brew 'terminal-notifier' # Send macOS User Notifications from the command-line
+# kubernetes tail - pod log viewer
 brew 'boz/repo/kail'
 
 brew 'aria2'        # Resuming download util (better wget)
