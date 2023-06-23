@@ -1,14 +1,19 @@
 # vi:
 #############################################################
-# ~/.Brewfile - Software Installs for MacOS                 #
-#                                                           #
-# List of packages to be installed / updated via Homebrew   #
-# Apps are sorted by category, and arranged alphabetically  #
-# Be sure to delete / comment out anything you do not need  #
-# Usage, run: $ brew bundle --global --file .Brewfile       #
-# See brew docs for more info: https://docs.brew.sh/Manpage #
-#                                                           #
-# License: MIT                                              #
+# ~/.Brewfile - Software Installs for MacOS
+#
+# List of packages to be installed / updated via Homebrew
+# Apps are sorted by category, and arranged alphabetically
+# Be sure to delete / comment out anything you do not need
+# Usage, run: $ brew bundle --global --file Brewfile
+# See brew docs for more info: https://docs.brew.sh/Manpage
+#
+# Dump installed packages
+# brew bundle dump -f --describe --file Brewfile.installed
+#
+# Show dependencies not listed from the Brewfile
+# brew bundle cleanup
+# brew bundle cleanup --force
 #############################################################
 
 # Options
@@ -37,23 +42,41 @@ tap 'virtuslab/git-machete'
 tap 'pub/tools', 'https://gitlab.prod.cicd.ddl.az.lhgroup.de/pub/homebrew-tools.git'
 tap 'kdash-rs/kdash'
 tap 'boz/repo'
+tap 'filippo.io/age', 'https://filippo.io/age'
+tap 'samwho/spacer'
 
-brew 'git'          # Version controll
-brew 'git-branchless' # High-velocity, monorepo-scale workflow for Git
-brew 'gitui' # Blazing fast terminal-ui for git written in rust
-brew 'lazygit' # Simple terminal UI for git commands
-brew 'ranger'       # Directory browser
-brew 'tmux'         # Term multiplexer
-brew 'lazygit'      # Full Git managemtne app
-brew 'gh'             # Interact with GitHub PRs, issues, repos
-brew 'git-extras'     # Extra git commands for common tasks
-brew 'tig'            # Text-mode interface for git
-brew 'hubflow'          # GitFlow for GitHub
-brew 'git-flow-avh'     # AVH edition of git-flow
-brew 'jj' # Git-compatible distributed version control system
-brew 'neofetch' # Fast, highly customisable system info script
-brew 'gitmoji' # Interactive command-line tool for using emoji in commit messages
-brew 'xurls' # Extract urls from text
+# Version controll
+brew 'git'
+# High-velocity, monorepo-scale workflow for Git
+brew 'git-branchless'
+# Blazing fast terminal-ui for git written in rust
+brew 'gitui'
+# Simple terminal UI for git commands
+brew 'lazygit'
+# Directory browser
+brew 'ranger'
+# Term multiplexer
+brew 'tmux'
+# Full Git managemtne app
+brew 'lazygit'
+# Interact with GitHub PRs, issues, repos
+brew 'gh'
+# Extra git commands for common tasks
+brew 'git-extras'
+# Text-mode interface for git
+brew 'tig'
+# GitFlow for GitHub
+brew 'hubflow'
+# AVH edition of git-flow
+brew 'git-flow-avh'
+# Git-compatible distributed version control system
+brew 'jj'
+# Fast, highly customisable system info script
+brew 'neofetch'
+# Interactive command-line tool for using emoji in commit messages
+brew 'gitmoji'
+# Extract urls from text
+brew 'xurls'
 # Search tool like grep, but optimized for programmers
 brew "ack"
 
@@ -62,105 +85,187 @@ brew "ankitpokhrel/jira-cli/jira-cli"
 # A Kubernetes credential (exec) plugin implementing azure authentication
 brew "azure/kubelogin/kubelogin"
 # some requirements
-brew 'coreutils' # GNU File, Shell, and Text utilities
-brew 'colordiff' # Color-highlighted diff(1) output
-brew 'terminal-notifier' # Send macOS User Notifications from the command-line
+# GNU File, Shell, and Text utilities
+brew 'coreutils'
+# Color-highlighted diff(1) output
+brew 'colordiff'
+# Send macOS User Notifications from the command-line
+brew 'terminal-notifier'
 # kubernetes tail - pod log viewer
 brew 'boz/repo/kail'
 
-brew 'aria2'        # Resuming download util (better wget)
-brew 'bat'          # Output highlighting (better cat)
-brew 'ctags'        # Indexing of file info + headers
-brew 'diff-so-fancy'# Readable file compares (better diff)
-brew 'duf'          # Get info on mounted disks (better df)
-brew 'exa'          # Listing files with info (better ls)
-brew 'exiftool'     # Read, write and modify exif data
-brew 'fzf'          # Fuzzy file finder and filtering
-brew 'jq'           # JSON parser, output and query files
-brew 'most'         # Multi-window scroll pager (better less)
-brew 'procs'        # Advanced process viewer (better ps)
-brew 'ripgrep'      # Searching within files (better grep)
-brew 'rsync'        # Fast incremental file transfer
-brew 'sd'           # RegEx find and replace (better sed)
-brew 'thefuck'      # Auto-correct miss-typed commands
-brew 'tldr'         # Community-maintained docs (better man)
-brew 'tree'         # Directory listings as tree structure
-brew 'entr'         # Run arbitrary commands when files change
-brew 'hyperfine'    # Command-line benchmarking tool
-brew 'tre-command'  # Tree command, improved
-brew 'tmuxinator'   # Manage complex tmux sessions easily
+# Resuming download util (better wget)
+brew 'aria2'
+# Output highlighting (better cat)
+brew 'bat'
+# Indexing of file info + headers
+# brew 'ctags'
+# Maintained ctags implementation
+brew 'universal-ctags'
+# Readable file compares (better diff)
+brew 'diff-so-fancy'
+# Get info on mounted disks (better df)
+brew 'duf'
+# Listing files with info (better ls)
+brew 'exa'
+# Read, write and modify exif data
+brew 'exiftool'
+# Fuzzy file finder and filtering
+brew 'fzf'
+# JSON parser, output and query files
+brew 'jq'
+# Multi-window scroll pager (better less)
+brew 'most'
+# Advanced process viewer (better ps)
+brew 'procs'
+# Searching within files (better grep)
+brew 'ripgrep'
+# Fast incremental file transfer
+brew 'rsync'
+# RegEx find and replace (better sed)
+brew 'sd'
+# Auto-correct miss-typed commands
+brew 'thefuck'
+# Community-maintained docs (better man)
+brew 'tldr'
+# Directory listings as tree structure
+brew 'tree'
+# Run arbitrary commands when files change
+brew 'entr'
+# Command-line benchmarking tool
+brew 'hyperfine'
+# Tree command, improved
+brew 'tre-command'
+# Manage complex tmux sessions easily
+brew 'tmuxinator'
 
-brew 'bmon'         # Bandwidth utilization monitor
-brew 'ctop'         # Container metrics and monitoring
-brew 'bpytop'       # Resource monitoring (like htop)
-brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
-brew 'gping'        # Interactive ping tool, with graph
-brew 'speedtest-cli'# Command line speed test utility
-brew 'monit'        # Manage and monitor processes, files, directories, and devices
-brew 'dog'          # Command-line DNS client
+# Bandwidth utilization monitor
+brew 'bmon'
+# Container metrics and monitoring
+brew 'ctop'
+# Resource monitoring (like htop)
+brew 'bpytop'
+# Disk usage analyzer and monitor (better du)
+brew 'dua-cli'
+# Interactive ping tool, with graph
+brew 'gping'
+# Command line speed test utility
+brew 'speedtest-cli'
+# Manage and monitor processes, files, directories, and devices
+brew 'monit'
+# Command-line DNS client
+brew 'dog'
 
-brew 'httpie'       # HTTP / API testing testing client
-brew 'lazydocker'   # Full Docker management app
-brew 'autopep8'     # Automatically formats Python code to conform to the PEP 8 style guide
+# HTTP / API testing testing client
+brew 'httpie'
+# Automatically formats Python code to conform to the PEP 8 style guide
+brew 'autopep8'
 
-brew 'asciinema'        # Record and share terminal sessions
-brew 'navi'             # Interactive cheatsheet tool for the command-line
+# Record and share terminal sessions
+brew 'asciinema'
+# Interactive cheatsheet tool for the command-line
+brew 'navi'
 
-brew 'pv'           # Pipe viewer, with animation options
-brew 'figlet'       # Output text as big ASCII art text
-brew 'lolcat'       # Make console output raibow colored
-brew 'neofetch'     # Show system data and ditstro info
-brew 'zoxide' # Shell extension to navigate your filesystem faster
+# Pipe viewer, with animation options
+brew 'pv'
+# Output text as big ASCII art text
+brew 'figlet'
+# Make console output raibow colored
+brew 'lolcat'
+# Show system data and ditstro info
+brew 'neofetch'
+# Shell extension to navigate your filesystem faster
+brew 'zoxide'
 
 # Scriptable scratchpad for developers
-cask 'boop'           # Text transformation tool
-cask 'iterm2'         # Better terminal emulator
+cask 'boop'
+# Better terminal emulator
+cask 'iterm2'
 # Browse, manage, inspect containers and images
 cask "podman-desktop"
 # Collaboration platform for API development
-cask 'postman'        # HTTP API testing app
-cask 'visual-studio-code' # Code editor
-cask 'android-file-transfer' # Transfer files from and to an Android smartphone
-cask 'apache-directory-studio' # Eclipse-based LDAP browser and directory client
-cask 'temurin' # JDK from the Eclipse Foundation (Adoptium)
-cask 'keystore-explorer' # GUI replacement for the Java command-line utilities keytool and jarsigner
+cask 'postman'
+# Code editor
+cask 'visual-studio-code'
+# Transfer files from and to an Android smartphone
+cask 'android-file-transfer'
+# Eclipse-based LDAP browser and directory client
+cask 'apache-directory-studio'
+# JDK from the Eclipse Foundation (Adoptium)
+cask 'temurin'
+# GUI replacement for the Java command-line utilities keytool and jarsigner
+cask 'keystore-explorer'
 # Utility to adjust keyrepeat settings for MacOS.
 brew "koekeishiya/formulae/krp"
 # A tiling window manager for macOS based on binary space partitioning.
 brew "koekeishiya/formulae/yabai"
 
-brew 'node'           # Node.js
-brew 'openjdk'        # Java development kit
-brew 'golang'   # Open source programming language to build simple/reliable/efficient software
+# Node.js
+brew 'node'
+# Java development kit
+brew 'openjdk'
+# Open source programming language to build simple/reliable/efficient software
+brew 'golang'
 
-brew 'ansible'              # Automate deployment, configuration, and upgrading
-# brew 'ansible-cmdb' # Generates static HTML overview page from Ansible facts
-# brew 'ansible-language-server' # Language Server for Ansible Files
-brew 'ansible-lint' # Checks ansible playbooks for practices and behaviour
-brew 'docker'               # Containers
-brew 'pub/tools/scripts'    # az context
-brew 'helm-renderer' # Render Helm charts for your k8s cluster locally
-brew 'kdash'        # A fast and simple dashboard for Kubernetes written in Rust
-brew 'helm'         # Kubernetes package manager
-brew 'helmfile'     # Deploy Kubernetes Helm Charts
-brew 'helmify'      # Create Helm chart from Kubernetes
-brew 'helmsman'     # Helm Charts as Code tool
-brew 'kube-linter'  # Static analysis tool for Kubernetes YAML files and Helm charts
-brew 'kubergrunt'   # Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl
+# Automate deployment, configuration, and upgrading
+brew 'ansible'
+# # Generates static HTML overview page from Ansible facts
+brew 'ansible-cmdb'
+# # Language Server for Ansible Files
+brew 'ansible-language-server'
+# Checks ansible playbooks for practices and behaviour
+brew 'ansible-lint'
+# Full Docker management app
+brew 'lazydocker'
+# brew 'docker'
+brew 'docker-compose'
+brew 'hyperkit'
+brew 'minikube'
+# az context
+brew 'pub/tools/scripts'
+# Render Helm charts for your k8s cluster locally
+brew 'helm-renderer'
+# A fast and simple dashboard for Kubernetes written in Rust
+brew 'kdash'
+# Kubernetes package manager
+brew 'helm'
+# Deploy Kubernetes Helm Charts
+brew 'helmfile'
+# Create Helm chart from Kubernetes
+brew 'helmify'
+# Helm Charts as Code tool
+brew 'helmsman'
+# Editor of encrypted files
+brew 'sops'
+brew 'age'
+# Static analysis tool for Kubernetes YAML files and Helm charts
+brew 'kube-linter'
+# Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl
+brew 'kubergrunt'
+# Navigator for your Kubernetes clusters right in your pocket
 cask 'kubenav'
-cask 'lens' # Kubernetes IDE
-cask 'rancher' # Kubernetes and container management on the desktop
+# Kubernetes IDE
+cask 'lens'
+# Kubernetes and container management on the desktop
+# cask 'rancher'
 # UI for Kubernetes
 cask "headlamp"
-cask 'microsoft-remote-desktop' # Remote desktop client
-cask 'gitup' # Update multiple git repositories at once
-# cask 'octant' # MSC
-brew 'istioctl' # Istio configuration command-line utility
-brew 'jfrog-cli' # Command-line interface for JFrog products
-brew 'nmap' # Port scanning utility for large networks
-brew 'pylint' # It's not just a linter that annoys you!
-cask 'vagrant' # Development environment
-cask 'vagrant-manager' # Vagrant Manager
+# Remote desktop client
+cask 'microsoft-remote-desktop'
+# Update multiple git repositories at once
+cask 'gitup'
+# Istio configuration command-line utility
+brew 'istioctl'
+# Command-line interface for JFrog products
+brew 'jfrog-cli'
+# Port scanning utility for large networks
+brew 'nmap'
+# It's not just a linter that annoys you!
+brew 'pylint'
+# Development environment
+cask 'vagrant'
+# Vagrant Manager
+cask 'vagrant-manager'
 # Tool to explore all the running tasks (processes)
 cask "taskexplorer"
 cask "procexp"
@@ -169,52 +274,87 @@ cask "netiquette"
 # Drop any files to any devices on your LAN
 cask "landrop"
 
-cask 'gimp-dev'         # Photo editor
-# cask 'gimp'         # Photo editor
-brew 'handbrake'    # Video transcoder
-cask 'inkscape'     # Vector editor
+# Photo editor
+cask 'gimp-dev'
+# # Photo editor
+# cask 'gimp'
+# Video transcoder
+brew 'handbrake'
+# Vector editor
+cask 'inkscape'
 # Open-source software for live streaming and screen recording
-cask 'obs'          # Screencasting / recording
-cask 'shotcut'      # Video editor
-cask 'drawio' # Draw.io is free online diagram software
-cask 'joplin' # Note taking and to-do application with synchronization capabilities
-cask 'keepassxc' # Password manager app
-cask 'libreoffice' # Office suite
-cask 'macvim' # GUI for vim, made for macOS
-cask 'double-commander' # File manager
-cask 'adobe-acrobat-reader' # View, print, and comment on PDF documents
-cask 'foxitreader' # PDF reader
-cask 'atom' # Text editor
+cask 'obs'
+# Video editor
+cask 'shotcut'
+# Draw.io is free online diagram software
+cask 'drawio'
+# Note taking and to-do application with synchronization capabilities
+cask 'joplin'
+# Password manager app
+cask 'keepassxc'
+# Office suite
+cask 'libreoffice'
+# GUI for vim, made for macOS
+cask 'macvim'
+# File manager
+cask 'double-commander'
+# View, print, and comment on PDF documents
+cask 'adobe-acrobat-reader'
+# PDF reader
+cask 'foxitreader'
+# Text editor
+cask 'atom'
 # E-books management software
-cask 'calibre'      # E-Book reader
-cask 'spotify', args: { require_sha: false } # Propietary music streaming
-cask 'vlc'          # Media player
+# E-Book reader
+cask 'calibre'
+# Propietary music streaming
+cask 'spotify', args: { require_sha: false }
+# Media player
+cask 'vlc'
 # Trims video and audio files losslessly
 cask "losslesscut"
-cask 'background-music' # Audio utility
-cask 'blackhole-16ch' # Virtual Audio Driver
+# Audio utility
+# cask 'background-music'
+# Virtual Audio Driver
+# cask 'blackhole-16ch'
 
-cask 'multifirefox' # Launcher utility to run multiple versions of Firefox side-by-side
-cask 'google-chrome' # Google Chrome
-cask 'firefox', args: { appdir: '/Applications' } # Mozilla Firefox
-cask 'chromium' # Free and open-source web browser
-cask 'firefox-developer-edition', args: { appdir: '/Applications', require_sha: false } # Propietary music streaming
+# Launcher utility to run multiple versions of Firefox side-by-side
+cask 'multifirefox'
+# Google Chrome
+cask 'google-chrome'
+# Mozilla Firefox
+cask 'firefox', args: { appdir: '/Applications' }
+# Free and open-source web browser
+cask 'chromium'
+# Propietary music streaming
+cask 'firefox-developer-edition', args: { appdir: '/Applications', require_sha: false }
 
 # Developer targeted fonts with a high number of glyphs
 cask 'font-agave-nerd-font'
+# Free monospaced font with programming ligatures
+cask 'font-fira-code'
 # Developer targeted fonts with a high number of glyphs
 cask 'font-fira-code-nerd-font'
 # Developer targeted fonts with a high number of glyphs
 cask 'font-hack-nerd-font'
 cask 'font-poltawski-nowy'
+# Find/fix obsolete Nerd Font icons
+brew 'nerdfix'
 
-cask 'alt-tab'        # Much better alt-tab window switcher
-cask 'hiddenbar'      # Hide / show annoying menubar icons
-brew 'm-cli'          # All in one MacOS management CLI app
-cask 'shottr'         # Better screenshot utility
-cask 'karabiner-elements' # Keyboard customizer
-cask 'rectangle' # Move and resize windows using keyboard shortcuts or snap areas
-cask 'displaylink' # Drivers for DisplayLink docks, adapters and monitors
+# Much better alt-tab window switcher
+cask 'alt-tab'
+# Hide / show annoying menubar icons
+cask 'hiddenbar'
+# All in one MacOS management CLI app
+brew 'm-cli'
+# Better screenshot utility
+cask 'shottr'
+# Keyboard customizer
+cask 'karabiner-elements'
+# Move and resize windows using keyboard shortcuts or snap areas
+cask 'rectangle'
+# Drivers for DisplayLink docks, adapters and monitors
+cask 'displaylink'
 # Install and switch between multiple versions of Xcode
 cask "xcodes"
 # Keep your computer awake
@@ -228,6 +368,8 @@ cask "alt-tab"
 cask "android-file-transfer"
 # Android SDK component
 cask 'android-platform-tools'
+# Tools for building Android applications
+cask 'android-studio'
 # Menu item for starting and stopping homebrew services
 cask 'brewservicesmenubar'
 # Trains AIs to understand and translate texts
@@ -250,3 +392,23 @@ cask "middleclick"
 cask "logi-options-plus"
 # Mind-mapping software written in Java
 cask "freemind"
+# Controls and monitors all fans on Apple computers
+cask 'macs-fan-control'
+# Virtual machines UI using QEMU
+cask 'utm'
+# Application uninstaller
+cask 'appcleaner'
+# Command-line shell and scripting language
+cask 'powershell'
+# Draw structured diagrams
+cask 'dia'
+# Subdomain discovery tool
+brew 'subfinder'
+# Code style enforcement for bash programs
+# brew 'bashate'
+# Open source visual route tracking CLI tool:w
+brew 'nexttrace'
+# Assorted git-related scripts and tools
+brew 'git-tools'
+# A small command-line utility for adding spacers to command output
+brew 'spacer'

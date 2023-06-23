@@ -12,7 +12,7 @@ export BASH_IT="$HOME/.bash-it"
 export BASH_IT_THEME
 # BASH_IT_THEME=dracorp
 BASH_IT_THEME=powerline-multiline
-export POWERLINE_LEFT_PROMPT='in_vim scm python_venv user_info hostname cwd k8s_context azure_context'
+export POWERLINE_LEFT_PROMPT='scm user_info hostname cwd k8s_context azure_context'
 # export POWERLINE_RIGHT_PROMPT='clock battery last_status k8s_context azure_context'
 # faster
 export POWERLINE_RIGHT_PROMPT='last_status'

@@ -60,7 +60,7 @@ plugins=(
     jfrog
     jump
     jsontools
-    keychain
+    # keychain
     kops
     kubectl
     last-working-dir
@@ -178,3 +178,4 @@ fi
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 POWERLEVEL9K_INSTANT_PROMPT=quiet
 # POWERLEVEL9K_INSTANT_PROMPT=off
+
