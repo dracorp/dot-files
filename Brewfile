@@ -44,6 +44,7 @@ tap 'kdash-rs/kdash'
 tap 'boz/repo'
 tap 'filippo.io/age', 'https://filippo.io/age'
 tap 'samwho/spacer'
+tap 'homebrew/autoupdate'
 
 # Version controll
 brew 'git'
@@ -412,3 +413,22 @@ brew 'nexttrace'
 brew 'git-tools'
 # A small command-line utility for adding spacers to command output
 brew 'spacer'
+# Cut, copy, and paste anything, anywhere, all from the terminal
+brew 'clipboard'
+# Virtualizer for x86 hardware
+# cask 'virtualbox'
+cask 'virtualbox-beta'
+# Swiss-army knife for Android testing and development
+brew 'adb-enhanced'
+# Writes your git commit messages for you with AI
+brew 'aicommits'
+# Defines a standard way of committing rules and communicating it
+brew 'commitizen'
+# Lint commit messages according to a commit convention
+brew 'commitlint'
+# More detailed commit messages without committing!
+brew 'kommit'
+# Software environment for statistical computing
+cask 'r'
+# Data science software focusing on R and Python
+cask 'rstudio'
