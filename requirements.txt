@@ -4,3 +4,6 @@ gitpython
 colorama
 ansible-lint
 pydf
+pip-autoremove
+certifi
+yolk
