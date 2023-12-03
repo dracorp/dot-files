@@ -515,6 +515,8 @@ cask 'keepassxc', args: { appdir: '/Applications' }
 cask 'libreoffice'
 # GUI for vim, made for macOS
 cask 'macvim'
+# Pure Python Vim clone
+brew 'pyvim'
 # High performance code minimap generator
 brew 'code-minimap'
 # Neovim GUI written in Golang, using a Golang qt backend
@@ -676,8 +678,6 @@ brew 'azure/kubelogin/kubelogin'
 brew 'boz/repo/kail'
 # Microsoft Azure CLI 2.0
 brew 'azure-cli'
-# Run a Kubernetes cluster locally
-brew 'minikube'
 # Render Helm charts for your k8s cluster locally
 brew 'helm-renderer'
 # A fast and simple dashboard for Kubernetes written in Rust
@@ -763,7 +763,9 @@ brew 'antigen'
 # Command-line shell and scripting language
 cask 'powershell'
 
-## Devops: docker
+## Devops: docker, podman
+# Pack, ship and run any application as a lightweight container
+brew 'docker'
 # Docker CLI plugin for extended build capabilities with BuildKit
 brew 'docker-buildx'
 # Full Docker management app
@@ -774,14 +776,14 @@ brew 'docker-compose'
 brew 'container-diff'
 # Smarter Dockerfile linter to validate best practices
 brew 'hadolint'
-
-## Docker: podman
+# Toolkit for embedding hypervisor capabilities in your application
+brew 'hyperkit' if Hardware::CPU.intel?
 # Tool for managing OCI containers and pods
 brew 'podman'
 # Browse, manage, inspect containers and images
 cask 'podman-desktop'
-# Toolkit for embedding hypervisor capabilities in your application
-brew 'hyperkit' if Hardware::CPU.intel?
+# Run a Kubernetes cluster locally
+brew 'minikube'
 
 ## Devops: tools
 # Various scripts for devops and more.
