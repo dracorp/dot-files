@@ -78,9 +78,10 @@ tap 'samwho/spacer'
 tap 'schappim/ocr'
 tap 'virtuslab/git-machete'
 tap 'k8sgpt-ai/k8sgpt'
+tap 'martido/homebrew-graph'
 ## A CLI tool upgrading every outdated app installed by Homebrew Cask
 # INFO: brew cu
-#tap 'buo/cask-upgrade'
+tap 'buo/cask-upgrade'
 
 ## Development: git
 brew 'git'
@@ -145,6 +146,8 @@ brew 'commitlint'
 brew 'kommit'
 # Framework for managing multi-language pre-commit hooks
 brew 'pre-commit'
+# Bootstrap GitHub SSH configuration
+brew 'github-keygen'
 
 ## Development: python
 # Pyenv plugin to manage virtualenv
@@ -481,6 +484,12 @@ brew 'colordiff'
 brew 'httpx'
 # HTTP / API testing testing client
 brew 'httpie'
+# GNU Pretty Good Privacy (PGP) package
+brew 'gnupg'
+# Pinentry for GPG on Mac
+brew 'pinentry-mac'
+# Graph visualization software from AT&T and Bell Labs
+brew 'graphviz'
 
 ## Tools: cask
 # GUI replacement for the Java command-line utilities keytool and jarsigner
@@ -592,6 +601,8 @@ cask 'textmate'
 cask 'draw-things'
 # Video chat, voice call and instant messaging application
 cask 'skype'
+# Configurable document editor that supports Markdown
+cask 'typora'
 
 ## Tools: cask, browser
 # Launcher utility to run multiple versions of Firefox side-by-side
@@ -611,7 +622,7 @@ cask 'firefox-developer-edition', args: { appdir: '/Applications', require_sha: 
 
 ## Tools: macos, cask
 # Better terminal emulator
-cask 'iterm2-beta'
+cask 'iterm2', args: { appdir: '/Applications' }
 # Hide / show annoying menubar icons
 cask 'hiddenbar'
 # Keyboard customizer
@@ -845,6 +856,6 @@ brew 'nerdfix'
 brew 'freetype'
 
 ## Temporary to prevent cleanup
-cask 'microsoft-outlook'
-cask 'microsoft-teams'
-cask 'microsoft-teams-classic'
+#cask 'microsoft-outlook'
+#cask 'microsoft-teams'
+#cask 'microsoft-teams-classic'
