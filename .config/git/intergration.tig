@@ -1,0 +1,13 @@
+# vim: set ft=gitconfig:
+#
+[tig "color"]
+	# white, black, green, magenta, blue, cyan, yellow, red, default
+	# A strange looking cursor line
+	cursor          = default   default underline
+	# UI colors
+	title-blur      = white blue
+	title-focus     = white blue    bold
+	date            = cyan  default
+# View specific color
+[tig "color.tree"]
+

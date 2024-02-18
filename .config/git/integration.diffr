@@ -1,0 +1,7 @@
+# vim: set ft=gitconfig:
+# https://github.com/mookid/diffr
+[core]
+    pager = diffr --line-numbers aligned | less -RFX
+
+[interactive]
+    diffFilter = diffr

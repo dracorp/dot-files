@@ -1,0 +1,182 @@
+# vim: set ft=gitconfig:
+#
+# Maintained by Piotr Rogoża
+
+[core]
+	autocrlf = false
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	editor = vim
+	# attributesfile = # see default value ~/.config/git/attributes
+	# excludesfile = # see default value ~/.config/git/ignore
+[help]
+    # Automatically correct and execute mistyped commands after waiting for the given number of deciseconds (0.1 sec).
+	autocorrect = 0
+    # Override the default help format used by `git help`.
+    format = man
+
+[column]
+  ui = never
+[color]
+    # Determines the default value for variables such as `color.diff` and `color.grep` that control the use of color per command family.
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+	pager = true
+[color "branch"]
+	current = yellow bold
+	local = green bold
+    remote  = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	func = green bold
+	commit = yellow bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[init]
+    # Override the default branch name.
+	defaultBranch = main
+	# templateDir = ~/.config/git/git-template
+[merge]
+	summary = true
+    tool = vimdiff # default merge.tool
+    conflictstyle = diff3
+[push]
+    # Push should only push current branch, not all branches.
+	default = current
+    # Enable `--follow-tags` option by default.
+    followTags = true
+[diff]
+    colorMoved = default
+	tool = vimdiff
+	renames = copy
+	submodule = diff
+	# git config --global diff.submodule log
+	# git config --global diff.submodule short
+	# git config --global diff.submodule diff
+	# https://www.jvt.me/posts/2018/05/04/git-submodule-diff-formats/
+[stash]
+    # showPatch = true
+    showIncludeUntracked = true
+[submodule]
+	recurse = true
+[pull]
+	# ff = only
+	ff = yes
+[fetch]
+    prune = true
+[rebase]
+    # Automatically create a temporary stash entry before the operation begins, and apply it after the operation ends.
+    # https://mikulskibartosz.name/git-fixup-explained
+    # for git commit --fixup commit
+    # and
+    # git rebase -i --autosquash commit
+    autosquash = true
+	autostash = true
+[status]
+  # Enable the submodule summary and show a summary of commits for modified submodules
+  submoduleSummary = true
+[branch]
+    # When 'never', rebase is never automatically set to true. When 'local', rebase is set to true for tracked branches of other local branches. When 'remote', rebase is set to true for tracked branches of remote-tracking branches. When 'always', rebase will be set to true for all tracking branches. See "branch.autoSetupMerge"
+	# autosetuprebase = always
+	autosetuprebase = local
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+    required = true
+
+[diff "vimdiff"]
+	cmd = "vim -d" "$LOCAL" "$REMOTE"
+
+[commit]
+	gpgsign = false
+
+[grep]
+	extendRegexp = true
+	lineNumber = true
+
+
+[gui]
+	editor = vim
+	pruneDuringFetch = true
+
+###################################################
+# Aliases
+###################################################
+
+[include]
+  path = ~/.config/git/aliases
+
+###################################################
+# Integrations
+###################################################
+
+# delta
+[include]
+    # Override core.pager, interactive.diffFilter
+    path = ~/.config/git/integration.delta
+[include]
+    path = ~/.config/git/integration.delta.themes
+
+# diffr
+[include]
+    # Override core.pager, interactive.diffFilter
+    # path = ~/.config/git/integration.diffr
+
+# diff-so-fancy
+[include]
+    # Override core.pager, interactive.diffFilter
+    # path = ~/.config/git/intergration.diff-so-fancy
+
+[include]
+    # Override merge.tool
+    path = ~/.config/git/integration.diffconflicts
+
+###################################################
+# Users
+###################################################
+
+[include]
+  path = ~/.config/git/user.default
+
+[includeIf "gitdir:/Users/"]
+  path = ~/.config/git/user.macos
+
+[includeIf "gitdir:/home/"]
+  path = ~/.config/git/user.linux
+
+###################################################
+# Tools
+###################################################
+
+[diff "image"]
+    # https://github.com/ewanmellor/git-diff-image.git
+    # basher install ewanmellor/git-diff-image.git
+	command = ~/.basher/cellar/bin/git_diff_image
+
+[diff "sopsdiffer"]
+	textconv = sops -d --config /dev/null
+
+[bash-it]
+    # https://github.com/Bash-it/bash-it
+	hide-status = 1
+
+[cola]
+    # https://git-cola.github.io/
+	spellcheck = false
+

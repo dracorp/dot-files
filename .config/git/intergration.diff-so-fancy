@@ -1,0 +1,13 @@
+# vim: set ft=gitconfig:
+#
+
+[core]
+    pager = diff-so-fancy
+
+[diff-so-fancy]
+    # https://github.com/so-fancy/diff-so-fancy
+    # basher install so-fancy/diff-so-fancy
+	changeHunkIndicators = true
+
+[interactive]
+    diffFilter = diff-so-fancy --patch

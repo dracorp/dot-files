@@ -1,0 +1,5 @@
+# vim: set ft=gitconfig:
+#
+[user]
+	email = piotr.r.public@gmail.com
+

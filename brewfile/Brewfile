@@ -1,4 +1,4 @@
-# vi:
+# vi: ft=brew
 #############################################################
 # Brewfile - Software Installs for MacOS
 #
@@ -82,6 +82,7 @@ tap 'martido/homebrew-graph'
 ## A CLI tool upgrading every outdated app installed by Homebrew Cask
 # INFO: brew cu
 tap 'buo/cask-upgrade'
+tap 'romkatv/gitstatus'
 
 ## Development: git
 brew 'git'
@@ -148,6 +149,15 @@ brew 'kommit'
 brew 'pre-commit'
 # Bootstrap GitHub SSH configuration
 brew 'github-keygen'
+# Quickly clone an entire org's or user's repositories into one directory
+brew 'ghorg'
+# Git status for Bash/Zsh prompt
+brew 'romkatv/gitstatus/gitstatus'
+# Remove large files or passwords from Git history like git-filter-branch
+brew 'bfg'
+# Clone a git repository into a standard location organised by domain and path
+brew 'git-grab'
+
 
 ## Development: python
 # Pyenv plugin to manage virtualenv
@@ -253,7 +263,7 @@ brew 'awk'
 # Record and share terminal sessions
 brew 'asciinema'
 # Interactive cheatsheet tool for the command-line
-brew 'navi'
+# brew 'navi'
 # Output text as big ASCII art text
 brew 'figlet'
 # Make console output raibow colored
@@ -361,7 +371,9 @@ brew 'sevenzip'
 # Indexing of file info + headers
 # brew 'ctags'
 # Maintained ctags implementation
-brew 'universal-ctags'
+# brew 'universal-ctags'
+# Reimplementation of ctags(1)
+brew 'ctags-exuberant'
 # Readable file compares (better diff)
 brew 'diff-so-fancy'
 # Get info on mounted disks (better df)
@@ -370,8 +382,6 @@ brew 'duf'
 brew 'exa'
 # Read, write and modify exif data
 brew 'exiftool'
-# Fuzzy file finder and filtering
-brew 'fzf'
 # JSON parser, output and query files
 brew 'jq'
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -396,6 +406,8 @@ brew 'ripgrep-all'
 brew 'grep'
 # Fast incremental file transfer
 brew 'rsync'
+# Status/progress bar for rsync
+brew 'rsyncy'
 # RegEx find and replace (better sed)
 brew 'sd'
 # Auto-correct miss-typed commands
@@ -452,8 +464,6 @@ brew 'enca'
 brew 'fd'
 # Collection of GNU find, xargs, and locate
 brew 'findutils'
-# Command-line fuzzy finder written in Go
-brew 'fzf'
 # GNU awk utility
 brew 'gawk'
 # Calculate various network masks, etc. from a given IP address
@@ -490,6 +500,23 @@ brew 'gnupg'
 brew 'pinentry-mac'
 # Graph visualization software from AT&T and Bell Labs
 brew 'graphviz'
+# Network diagnostic tool, inspired by mtr
+brew 'trippy'
+# Open-source version of the X.Org X Window System
+cask 'xquartz'
+# Symbolic link maintenance utility
+brew 'symlinks'
+# Source code tag system
+brew 'global'
+# Command-line csv viewer
+brew 'csvlens'
+# A command line application for managing OS X Finder sidebar favourites
+cask 'mysides'
+# Utility for directing compilation
+brew 'make'
+# Powerful and cross-platform ls
+brew 'g-ls'
+
 
 ## Tools: cask
 # GUI replacement for the Java command-line utilities keytool and jarsigner
@@ -603,6 +630,8 @@ cask 'draw-things'
 cask 'skype'
 # Configurable document editor that supports Markdown
 cask 'typora'
+# Clipboard manager
+cask 'maccy'
 
 ## Tools: cask, browser
 # Launcher utility to run multiple versions of Firefox side-by-side
@@ -610,7 +639,7 @@ cask 'multifirefox'
 # Google Chrome
 cask 'google-chrome', args: { require_sha: false }
 # Mozilla Firefox
-cask 'firefox', args: { appdir: '/Applications' }
+# cask 'firefox', args: { appdir: '/Applications' }
 # Free and open-source web browser
 # cask 'chromium', greedy: true, args: { require_sha: false }
 # Chromium based browser
@@ -631,6 +660,8 @@ cask 'karabiner-elements'
 cask 'rectangle'
 # Drivers for DisplayLink docks, adapters and monitors
 cask 'displaylink'
+# Best command-line tool to install and switch between multiple versions of Xcode
+brew 'xcodes'
 # Install and switch between multiple versions of Xcode
 cask 'xcodes'
 # Menu bar tool to limit maximum charging percentage
@@ -649,6 +680,16 @@ cask 'macs-fan-control'
 cask 'appcleaner'
 # GUI app for Homebrew
 cask 'cakebrew'
+# Terminal emulator
+# cask 'wave'
+# Keyboard shortcut utility
+cask 'keyboard-cowboy'
+# Dedicated scratchpad for developers
+cask 'heynote'
+# Privacy-first, open-source platform for knowledge sharing and management
+cask 'logseq'
+# All-in-one bookmark manager
+cask 'raindropio'
 
 ## Tools: macos, cli
 # Utility to adjust keyrepeat settings for MacOS.
@@ -656,15 +697,17 @@ brew 'koekeishiya/formulae/krp'
 # A tiling window manager for macOS based on binary space partitioning.
 brew 'koekeishiya/formulae/yabai'
 # All in one MacOS management CLI app
-brew 'm-cli'
+brew 'm-cli' if OS.mac?
 # Keep your Mac's application settings in sync
-brew 'mackup'
+brew 'mackup' if OS.mac?
 # Mac App Store command-line interface
-brew 'mas'
+brew 'mas' if OS.mac?
 # Homebrew, but with Docker images
 # brew 'whalebrew'
 # Send macOS User Notifications from the command-line
 brew 'terminal-notifier'
+# An Application for Inspecting macOS Installer Packages
+cask 'suspicious-package', args: { require_sha: false } if OS.mac?
 
 ## Kubernetes: cloudv, Azure, k8s
 # CLI tool to discover unused Kubernetes resources
@@ -695,6 +738,8 @@ brew 'helm-renderer'
 brew 'kdash'
 # Kubernetes package manager
 brew 'helm'
+# Tool for automatically generating markdown documentation for helm charts
+brew 'helm-docs'
 # Deploy Kubernetes Helm Charts
 brew 'helmfile'
 # Create Helm chart from Kubernetes
@@ -750,7 +795,11 @@ brew 'shfmt'
 # Shell extension to jump to frequently used directories
 brew 'autojump'
 # Bash and zsh history suggest box
-brew 'hstr'
+# brew 'hstr'
+# Fly through your shell history
+brew 'mcfly'
+# Command-line fuzzy finder written in Go
+brew 'fzf'
 # Code style enforcement for bash programs
 # brew 'bashate'
 # Static analysis and lint tool, for (ba)sh scripts
