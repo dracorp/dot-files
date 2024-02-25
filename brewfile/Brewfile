@@ -632,6 +632,8 @@ cask 'skype'
 cask 'typora'
 # Clipboard manager
 cask 'maccy'
+# Menu bar app to picture-in-picture any window
+cask 'piphero'
 
 ## Tools: cask, browser
 # Launcher utility to run multiple versions of Firefox side-by-side
@@ -844,6 +846,8 @@ brew 'podman'
 cask 'podman-desktop'
 # Run a Kubernetes cluster locally
 brew 'minikube'
+# Podman Terminal User Interface
+brew 'podman-tui'
 
 ## Devops: tools
 # Various scripts for devops and more.
