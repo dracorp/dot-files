@@ -38,7 +38,7 @@
 [color "status"]
 	added = green bold
 	changed = yellow bold
-	untracked = red bold
+	untracked = magenta bold
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -129,9 +129,9 @@
 # delta
 [include]
     # Override core.pager, interactive.diffFilter
-    path = ~/.config/git/integration.delta
+    # path = ~/.config/git/integration.delta
 [include]
-    path = ~/.config/git/integration.delta.themes
+    # path = ~/.config/git/integration.delta.themes
 
 # diffr
 [include]
@@ -141,7 +141,7 @@
 # diff-so-fancy
 [include]
     # Override core.pager, interactive.diffFilter
-    # path = ~/.config/git/intergration.diff-so-fancy
+    path = ~/.config/git/intergration.diff-so-fancy
 
 [include]
     # Override merge.tool
@@ -174,7 +174,7 @@
 
 [bash-it]
     # https://github.com/Bash-it/bash-it
-	hide-status = 1
+	hide-status = 0
 
 [cola]
     # https://git-cola.github.io/

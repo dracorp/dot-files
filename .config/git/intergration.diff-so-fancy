@@ -2,7 +2,7 @@
 #
 
 [core]
-    pager = diff-so-fancy
+    pager = diff-so-fancy | less -RFX
 
 [diff-so-fancy]
     # https://github.com/so-fancy/diff-so-fancy
